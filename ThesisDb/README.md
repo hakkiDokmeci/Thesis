@@ -1,6 +1,6 @@
 # Graduate Thesis Database - ASP.NET Core API
 
-Bu proje, yüksek lisans ve doktora tezlerini yönetmek için geliştirilmiş bir ASP.NET Core Web API uygulamasıdır.
+Bu proje, yÃ¼ksek lisans ve doktora tezlerini yÃ¶netmek iÃ§in geliÅŸtirilmiÅŸ bir ASP.NET Core Web API uygulamasÄ±dÄ±r.
 
 ## ?? Teknolojiler
 
@@ -10,29 +10,29 @@ Bu proje, yüksek lisans ve doktora tezlerini yönetmek için geliştirilmiş bir ASP
 - SQL Server
 - C# 13.0
 
-## ?? Özellikler
+## ?? Ã–zellikler
 
-- **Tez Yönetimi**: Tez ekleme, güncelleme, listeleme ve silme
-- **Kişi Yönetimi**: Yazarlar, danışmanlar ve diğer kişiler
-- **Üniversite/Enstitü Yönetimi**: Akademik kurumlar
-- **Konu ve Anahtar Kelime Yönetimi**: Tezlerin kategorize edilmesi
-- **Çoklu Dil Desteği**: Farklı dillerdeki tezler
-- **CORS Desteği**: Frontend uygulamaları için
+- **Tez YÃ¶netimi**: Tez ekleme, gÃ¼ncelleme, listeleme ve silme
+- **KiÅŸi YÃ¶netimi**: Yazarlar, danÄ±ÅŸmanlar ve diÄŸer kiÅŸiler
+- **Ãœniversite/EnstitÃ¼ YÃ¶netimi**: Akademik kurumlar
+- **Konu ve Anahtar Kelime YÃ¶netimi**: Tezlerin kategorize edilmesi
+- **Ã‡oklu Dil DesteÄŸi**: FarklÄ± dillerdeki tezler
+- **CORS DesteÄŸi**: Frontend uygulamalarÄ± iÃ§in
 
-## ??? Veritabanı Yapısı
+## ??? VeritabanÄ± YapÄ±sÄ±
 
-Proje aşağıdaki ana tablolardan oluşur:
+Proje aÅŸaÄŸÄ±daki ana tablolardan oluÅŸur:
 - `THESIS`: Tez bilgileri
-- `PERSON`: Kişi bilgileri (Yazar, Danışman)
-- `UNIVERSITY`: Üniversite bilgileri
-- `INSTITUTE`: Enstitü bilgileri
+- `PERSON`: KiÅŸi bilgileri (Yazar, DanÄ±ÅŸman)
+- `UNIVERSITY`: Ãœniversite bilgileri
+- `INSTITUTE`: EnstitÃ¼ bilgileri
 - `SUBJECT`: Konu/Alan bilgileri
 - `KEYWORD`: Anahtar kelimeler
 - `LANGUAGE`: Dil bilgileri
-- `THESIS_TYPE`: Tez tipleri (Yüksek Lisans, Doktora vb.)
-- `THESIS_PERSON_ROLE`: Tez-Kişi ilişkileri
-- `THESIS_SUBJECT`: Tez-Konu ilişkileri
-- `THESIS_KEYWORD`: Tez-Anahtar Kelime ilişkileri
+- `THESIS_TYPE`: Tez tipleri (YÃ¼ksek Lisans, Doktora vb.)
+- `THESIS_PERSON_ROLE`: Tez-KiÅŸi iliÅŸkileri
+- `THESIS_SUBJECT`: Tez-Konu iliÅŸkileri
+- `THESIS_KEYWORD`: Tez-Anahtar Kelime iliÅŸkileri
 
 ## ?? Kurulum
 
@@ -41,17 +41,17 @@ Proje aşağıdaki ana tablolardan oluşur:
 - SQL Server (LocalDB veya Express)
 - Visual Studio 2022 veya Visual Studio Code
 
-### Adımlar
+### AdÄ±mlar
 
-1. **Projeyi klonlayın**
+1. **Projeyi klonlayÄ±n**
 ```bash
 git clone https://github.com/YOUR_USERNAME/ThesisDb.git
 cd ThesisDb
 ```
 
-2. **Bağlantı dizesini yapılandırın**
+2. **BaÄŸlantÄ± dizesini yapÄ±landÄ±rÄ±n**
 
-`appsettings.json` dosyasında connection string'i kendi SQL Server bilgilerinize göre güncelleyin:
+`appsettings.json` dosyasÄ±nda connection string'i kendi SQL Server bilgilerinize gÃ¶re gÃ¼ncelleyin:
 
 ```json
 {
@@ -61,54 +61,54 @@ cd ThesisDb
 }
 ```
 
-3. **Veritabanını oluşturun**
+3. **VeritabanÄ±nÄ± oluÅŸturun**
 
-SQL Server'da veritabanı şemasını oluşturmak için SQL scriptlerini çalıştırın veya Entity Framework migrations kullanın:
+SQL Server'da veritabanÄ± ÅŸemasÄ±nÄ± oluÅŸturmak iÃ§in SQL scriptlerini Ã§alÄ±ÅŸtÄ±rÄ±n veya Entity Framework migrations kullanÄ±n:
 
 ```bash
 dotnet ef database update
 ```
 
-4. **Uygulamayı çalıştırın**
+4. **UygulamayÄ± Ã§alÄ±ÅŸtÄ±rÄ±n**
 ```bash
 dotnet run
 ```
 
-Uygulama varsayılan olarak `https://localhost:5001` ve `http://localhost:5000` adreslerinde çalışacaktır.
+Uygulama varsayÄ±lan olarak `https://localhost:5001` ve `http://localhost:5000` adreslerinde Ã§alÄ±ÅŸacaktÄ±r.
 
 ## ?? API Endpoints
 
 ### Tezler (Theses)
-- `GET /api/theses` - Tüm tezleri listele
+- `GET /api/theses` - TÃ¼m tezleri listele
 - `GET /api/theses/{id}` - Belirli bir tezi getir
 - `POST /api/theses` - Yeni tez ekle
-- `PUT /api/theses/{id}` - Tez güncelle
+- `PUT /api/theses/{id}` - Tez gÃ¼ncelle
 - `DELETE /api/theses/{id}` - Tez sil
 
-### Üniversiteler (Universities)
-- `GET /api/universities` - Tüm üniversiteleri listele
-- `GET /api/universities/{id}` - Belirli bir üniversiteyi getir
-- `POST /api/universities` - Yeni üniversite ekle
-- `PUT /api/universities/{id}` - Üniversite güncelle
-- `DELETE /api/universities/{id}` - Üniversite sil
+### Ãœniversiteler (Universities)
+- `GET /api/universities` - TÃ¼m Ã¼niversiteleri listele
+- `GET /api/universities/{id}` - Belirli bir Ã¼niversiteyi getir
+- `POST /api/universities` - Yeni Ã¼niversite ekle
+- `PUT /api/universities/{id}` - Ãœniversite gÃ¼ncelle
+- `DELETE /api/universities/{id}` - Ãœniversite sil
 
-### Diğer Endpoints
-- `/api/institutes` - Enstitüler
-- `/api/people` - Kişiler
+### DiÄŸer Endpoints
+- `/api/institutes` - EnstitÃ¼ler
+- `/api/people` - KiÅŸiler
 - `/api/subjects` - Konular
 - `/api/keywords` - Anahtar kelimeler
 - `/api/languages` - Diller
 - `/api/thesistypes` - Tez tipleri
 
-## ?? Örnek Kullanım
+## ?? Ã–rnek KullanÄ±m
 
 ### Yeni Tez Ekleme
 
 ```json
 POST /api/theses
 {
-  "title": "Yapay Zeka ve Makine Öğrenmesi Uygulamaları",
-  "abstract": "Bu tez yapay zeka alanında...",
+  "title": "Yapay Zeka ve Makine Ã–ÄŸrenmesi UygulamalarÄ±",
+  "abstract": "Bu tez yapay zeka alanÄ±nda...",
   "year": 2024,
   "numberOfPages": 150,
   "submissionDate": "2024-06-15",
@@ -119,24 +119,24 @@ POST /api/theses
   "supervisorIds": [2, 3],
   "coSupervisorId": 4,
   "subjectIds": [1, 2],
-  "keywords": ["yapay zeka", "makine öğrenmesi", "derin öğrenme"]
+  "keywords": ["yapay zeka", "makine Ã¶ÄŸrenmesi", "derin Ã¶ÄŸrenme"]
 }
 ```
 
-## ?? Katkıda Bulunma
+## ?? KatkÄ±da Bulunma
 
 1. Bu projeyi fork edin
-2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
+2. Feature branch oluÅŸturun (`git checkout -b feature/AmazingFeature`)
+3. DeÄŸiÅŸikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
 4. Branch'inizi push edin (`git push origin feature/AmazingFeature`)
-5. Pull Request oluşturun
+5. Pull Request oluÅŸturun
 
 ## ?? Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+Bu proje MIT lisansÄ± altÄ±nda lisanslanmÄ±ÅŸtÄ±r.
 
-## ?? İletişim
+## ?? Ä°letiÅŸim
 
-Proje Sahibi - [@YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
+Proje Sahibi - [@Brkays](https://github.com/YOUR_GITHUB_USERNAME)
 
 Proje Linki: [https://github.com/YOUR_GITHUB_USERNAME/ThesisDb](https://github.com/YOUR_GITHUB_USERNAME/ThesisDb)
